@@ -1,0 +1,48 @@
+{
+  "name": "api.products",
+  "version": "1.0.0",
+  "description": "The machine learning backend server for Tomator.ai.",
+  "main": "ts-node --esm src/index.ts",
+  "scripts": {
+    "start": "ts-node --esm index.ts -r tsconfig-paths/register",
+    "build": "tsc --project tsconfig.json",
+    "test": "jest"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "resolver": "jest-ts-webcompat-resolver",
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
+  },
+  "dependencies": {
+    "@prisma/client": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "global": "^4.4.0",
+    "jest": "^29.6.2",
+    "mariadb": "^3.2.0",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.6",
+    "@types/supertest": "^2.0.12",
+    "jest-ts-webcompat-resolver": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "prisma": "^5.1.1",
+    "ts-jest": "^29.1.1",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

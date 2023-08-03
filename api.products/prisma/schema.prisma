@@ -1,0 +1,23 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_URL")
+}
+
+model Product {
+  ProductID       Int            @id @default(autoincrement())
+  ProductName     String         @db.VarChar(100)
+  ProductPhotoURL String         @db.VarChar(255)
+  ProductStatus   ProductStatus?
+
+  @@map("Product")
+}
+
+enum ProductStatus {
+  Active
+  InActive
+}
