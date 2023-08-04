@@ -1,20 +1,28 @@
-import React from "react";
-import PageWrapper from '../PageWrapper';
+import React, { useEffect, useState } from "react";
+import PageWrapper from "../PageWrapper";
+import { getProductsData } from "../ApiHelper";
+import { Product } from "../../components/interfaces";
 
 const ProductsPage = () => {
-  /*
-    TODO:
-      When the drag ends we want to keep the status persistant across logins. 
-      Instead of modifying the data locally we want to do it serverside via a post
-      request
-  */
+  const [data, setData] = useState<Product[]>([]);
+  const getProducts = async () => {
+    const productsData = await getProductsData();
+    setData(productsData);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <PageWrapper>
-      <h1 className="text-3xl font-bold text-white">
-        Product Page Goes Here
-      </h1>
+      {data
+        .filter((product) => product.ProductStatus === "Active")
+        .map((product) => (
+          <div key={product.ProductID}>{product.ProductName}</div>
+        ))}
     </PageWrapper>
   );
 };
 
-export default ProductsPage
+export default ProductsPage;
