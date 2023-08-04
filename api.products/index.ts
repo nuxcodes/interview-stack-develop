@@ -7,7 +7,7 @@ app.use(express.json());
 dotenv.config();
 const port = 5002;
 
-app.get("/products", products);
+app.use("/api/products", products);
 
 if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => {

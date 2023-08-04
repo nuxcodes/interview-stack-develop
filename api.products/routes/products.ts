@@ -3,7 +3,7 @@ import db from "../prisma/db.js";
 
 export const products = Router();
 
-products.get("/products", (_, res) => {
+products.get("/", (_, res) => {
   db.product
     .findMany()
     .then((products) =>

@@ -1,9 +1,9 @@
 import { app } from "../index.js";
 import request from "supertest";
 
-describe("GET /products", () => {
+describe("GET /api/products", () => {
   test("should return a list of products with status 200", async () => {
-    const response = await request(app).get("/products");
+    const response = await request(app).get("/api/products");
     expect(response.status).toBe(200);
     expect(response.body.data).toBeDefined();
     console.log(response.body.data);
