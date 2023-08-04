@@ -89,6 +89,17 @@ NOTE: Make sure the api.orders container is running.
 
 You can also install all the dependencies locally and run the tests using the same command that you run inside the docker container from the bakcend directory. Would recommend setting up a python env under the .venv directory name for this
 
+### **NEW:** Testing api.products
+
+To run the jest test from the root directory run the following commands
+
+```Bash
+docker exec -it api-products sh
+yarn test # from within the container
+```
+
+NOTE: Make sure the api.products container is running.
+
 ## Your task
 
 You must develop the Products page for this application and create a PUBLIC github repo with the implementaion. There will be 3 steps to this task.
@@ -140,7 +151,7 @@ Database marz -> Table Orders(
 )
 ```
 
-Currently the `marz.Product.ProductPhotoURL` column contains no valid urls to for photos 
+Currently the `marz.Product.ProductPhotoURL` column contains no valid urls to for photos
 
 ```
 MariaDB [marz]> select * from Product;
