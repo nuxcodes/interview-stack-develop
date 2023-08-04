@@ -50,6 +50,7 @@ const GET_PRODUCTS_URL = "/api/products/";
 
 const getProductsData = async () => {
   let productsData: Product[] = [];
+  let errorOccured = false;
   try {
     const response = await axios.get(GET_PRODUCTS_URL);
     if (response.status === 200) {
@@ -61,8 +62,9 @@ const getProductsData = async () => {
     }
   } catch (err) {
     console.error(err);
+    errorOccured = true;
   }
-  return productsData;
+  return { productsData, errorOccured };
 };
 
 export {
