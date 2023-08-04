@@ -92,7 +92,7 @@ CREATE TABLE `Product` (
 
 LOCK TABLES `Product` WRITE;
 /*!40000 ALTER TABLE `Product` DISABLE KEYS */;
-INSERT INTO `Product` VALUES (1,'Hat','https://unsplash.com/photos/zVycYmcblDY','Active'),(2,'Shoes','https://unsplash.com/photos/NOpsC3nWTzY','Active'),(3,'Pants','https://unsplash.com/photos/m1m2EZOZVwA','Active'),(4,'Shirt','https://unsplash.com/photos/RqYTuWkTdEs','InActive'),(5,'Coat','https://unsplash.com/photos/K7L5V45Vn1U','InActive');
+INSERT INTO `Product` VALUES (1,'Hat','https://images.unsplash.com/photo-1595642527925-4d41cb781653','Active'),(2,'Shoes','https://images.unsplash.com/photo-1549298916-b41d501d3772','Active'),(3,'Pants','https://images.unsplash.com/photo-1542272604-787c3835535d','Active'),(4,'Shirt','https://images.unsplash.com/photo-1596755094514-f87e34085b2c','InActive'),(5,'Coat','https://images.unsplash.com/photo-1551232864-3f0890e580d9','InActive');
 /*!40000 ALTER TABLE `Product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
